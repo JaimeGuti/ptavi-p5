@@ -108,12 +108,16 @@ SIP?
 
 9. Fijémonos en las tramas siguientes a la número 46:
 * ¿Se registra con éxito en el primer intento?
+	No.
 * ¿Cómo sabemos si el registro se ha realizado correctamente o no?
+	Si la respuesta es un mensaje 4xx no se habrá registrado, sabremos que el registro es correcto cuando recibamos 200 OK.
 * ¿Podrı́as identificar las diferencias entre el primer intento y el
 segundo de registro? (fı́jate en el tamaño de los paquetes y mira
 a qué se debe el cambio)
+	Se diferencia en que en el segundo intento encontramos el campo Authorization.
 * ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica
 las unidades.
+	3600 segundos.	
 
 10. Una vez registrados, podemos efectuar una llamada. Vamos a probar
 con el servicio de eco de Ekiga que nos permite comprobar si nos
@@ -121,18 +125,33 @@ hemos conectado correctamente. El servicio de eco tiene la dirección
 sip:500@ekiga.net. Veamos el INVITE de cerca.
 * ¿Puede verse el nombre del que efectúa la llamada, ası́ como su
 dirección SIP?
+	Sí, Gregorio Robles, sip: grex@ekiga.net
 * ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
+	Los datos del INVITE de la llamada.
+	En SIP/SDP.
 * ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
+	No, porque el siguiente mensaje es 407 Proxy Authentication Required.
 * ¿En qué se diferencia el segundo INVITE más abajo del primero?
 ¿A qué crees que se debe esto?
+	En que en el segundo se añade el campo Proxy-Authorization con los requisitos necesarios que en el primer intento no fueron enviados.
+
 
 11. Una vez conectado, estudia el intercambio de tramas.
 * ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
+	Los protocolos RTP y H.261
+	RTP es el protocolo básico de transporte de tráfico multimedia en Internet, que se encapsula sobre UDP y se encarga de enviar tramas de 	aplicaciones de tiempo real, sin añadir fiabilidad ni ningún tipo de QoS.
+	H.261 es un algoritmo de codificación que genera tramas que son enviadas por el protocolo RTP.
 * ¿Cuál es el tamaño de paquete de los mismos?
+	RTP = 214
+	H.261 = no tiene un tamaño fijo.
 * ¿Se utilizan bits de padding?
+	No, ya que el campo padding está a cero (o False).
 * ¿Cuál es la periodicidad de los paquetes (en origen; nota que la
 captura es en destino)?
+	Cada 20 ms.
 * ¿Cuántos bits/segundo se envı́an?
+	
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una
