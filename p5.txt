@@ -201,13 +201,20 @@ esa llamada y pulsa el botón Graph.
 	No hay CSRCs.
 15. Identifica la trama donde se finaliza la conversación.
 * ¿Qué método SIP se utiliza?
+	BYE.
 * ¿En qué trama(s)?
+	924, 925, 927 Y 933.
 * ¿Por qué crees que se envı́a varias veces?
+	Porque no recibe el mensaje de respuesta 200 OK.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+	Para poner el valor de expires a cero y así eliminar ese usuario.
 * ¿En qué trama sucede esto?
+	En la trama 952.
 * ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
+	En que el expires ahora su valor es 0 y en la primera su valor era 3600.
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 Captura de una sesión SIP
