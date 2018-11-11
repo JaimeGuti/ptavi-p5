@@ -219,35 +219,30 @@ esa llamada y pulsa el botón Graph.
 
 Captura de una sesión SIP
 
-17. Dirı́gete a la web http://www.ekiga.net con el navegador y créate
-una cuenta. Lanza Ekiga, y configúralo con los datos de la cuenta
-que te acabas de crear. Comprueba que estás conectado (En la barra
-al final de la ventana podrás ver “Connected”). Al terminar, cierra
+17. Dirígete a la web de IPTel 3 con el navegador y créate una cuenta SIP. 
+Recibirás un correo electrónico de confirmación en la dirección que has indicado al registrarte.
+
+18. Lanza Ekiga, y configúralo con los datos de la cuenta que te acabas de crear. Para ello, puedes ir al menú “Editar” y seleccionar “Cuentas”. Tendrás que rellenar los campos de manera similar a lo que se puede ver en la imagen a continuación (recuerda poner tu nombre de usuario en lugar de “grex”). Comprueba que estás conectado (En la barra al final de la ventana podrás ver “Connected”). Al terminar, cierra
 completamente Ekiga.
 
-18. Captura una sesión SIP de una conversación con el número SIP sip:500@ekigan.net.
-Recuerda que has de comenzar a capturar tramas antes de arrancar
-Ekiga para ver todo el proceso3 .
+19. Captura una sesión SIP de una conversación con el número SIP sip:music@sip.iptel.org.
+Recuerda que has de comenzar a capturar tramas antes de arrancar Ekiga para ver todo el proceso.
 
-19. Observa las diferencias en el inicio de la conversación entre el entorno
-del laboratorio y el del ejercicio anterior4 :
-* ¿Se utilizan DNS y STUN? ¿Por qué?
-* ¿Son diferentes el registro y la descripción de la sesión?
+20. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
+* ¿Se utilizan DNS y STUN? ¿Por qué?
+* ¿Son diferentes el registro y la descripción de la sesión?
 
-20. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
-* ¿Cuántos flujos tenemos?
-* ¿Cuál es su periodicidad?
-* ¿Cuánto es el valor máximo del delta y los valores medios y
-máximo del jitter?
-* ¿Podrı́as reproducir la conversación desde Wireshark? ¿Cómo?
-Comprueba que poniendo un valor demasiado pequeño para el
-buffer de jitter, la conversación puede no tener la calidad necesaria.
-* ¿Sabrı́as decir qué tipo de servicio ofrece sip:500@ekiga.net?
+21. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
+* ¿Cuántos flujos tenemos?
+* ¿Cuál es su periodicidad?
+* ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
+* ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+* ¿Sabrías decir qué tipo de servicio ofrece sip:music@iptel.org?
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
+22. Filtra por los paquetes SIP de la captura y guarda únicamente los paquetes SIP como p5.pcapng. Abre el fichero guardado para cerciorarte de que lo has hecho bien. Deberás añadirlo al repositorio.
 
-21. Filtra por los paquetes SIP de la captura y guarda únicamente los
-paquetes SIP como p5.pcapng. Abre el fichero guardado para cerciorarte de que lo has hecho bien. Deberás añadirlo al repositorio.
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 [Al terminar la práctica, realiza un push para sincronizar tu repositorio GitHub]
 
