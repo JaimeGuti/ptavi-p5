@@ -221,23 +221,41 @@ Captura de una sesión SIP
 
 17. Dirígete a la web de IPTel 3 con el navegador y créate una cuenta SIP. 
 Recibirás un correo electrónico de confirmación en la dirección que has indicado al registrarte.
+	Hecho.
 
-18. Lanza Ekiga, y configúralo con los datos de la cuenta que te acabas de crear. Para ello, puedes ir al menú “Editar” y seleccionar “Cuentas”. Tendrás que rellenar los campos de manera similar a lo que se puede ver en la imagen a continuación (recuerda poner tu nombre de usuario en lugar de “grex”). Comprueba que estás conectado (En la barra al final de la ventana podrás ver “Connected”). Al terminar, cierra
-completamente Ekiga.
+18. Lanza Ekiga, y configúralo con los datos de la cuenta que te acabas de crear. Para ello, puedes ir al menú “Editar” y seleccionar “Cuentas”. Tendrás que rellenar los campos de manera similar a lo que se puede ver en la imagen a continuación (recuerda poner tu nombre de usuario en lugar de “grex”). Comprueba que estás conectado (En la barra al final de la ventana podrás ver “Connected”). Al terminar, cierra completamente Ekiga.
+	Hecho.
 
 19. Captura una sesión SIP de una conversación con el número SIP sip:music@sip.iptel.org.
 Recuerda que has de comenzar a capturar tramas antes de arrancar Ekiga para ver todo el proceso.
+	Hecho.
 
 20. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
 * ¿Se utilizan DNS y STUN? ¿Por qué?
+	Sí, porque estamos tras un NAT.
 * ¿Son diferentes el registro y la descripción de la sesión?
+	Sí, ahora en el mensaje cabecera tenemos un campo 'f' en el que aparece el 	usuario de iptel, un campo 't' en el que aparecen los datos de music@sip.iptel.org y un campo 'm' con el contacto URI que en este caso es nuestra cuenta de laboratorio y su ip.
 
 21. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
 * ¿Cuántos flujos tenemos?
+	Tenemos dos flujos, entre dos direcciones y que se comunican únicamente en dos 	 puertos(25662 y 5090 en este caso).
 * ¿Cuál es su periodicidad?
+	20 ms.
 * ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
+	Flujo 1(el que llega a la cuenta del lab):
+		-Max Delta: 36.737 ms
+		-Max Jitter: 2.073 ms
+		-Mean Jitter: 0.285 ms
+	Flujo 2 (el que sale desde la cuenta del lab):
+		-Max Delta: 191.119 ms
+		-Max Jitter: 43.199 ms
+		-Mean Jitter: 35.330 ms
 * ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+	Sí.
+	Telephony -> VoIP Calls -> Play Stream.
+	
 * ¿Sabrías decir qué tipo de servicio ofrece sip:music@iptel.org?
+	Servicio musical.
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
