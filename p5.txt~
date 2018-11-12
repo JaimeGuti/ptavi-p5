@@ -238,7 +238,7 @@ Recuerda que has de comenzar a capturar tramas antes de arrancar Ekiga para ver 
 
 21. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
 * ¿Cuántos flujos tenemos?
-	Tenemos dos flujos, entre dos direcciones y que se comunican únicamente en dos 	 puertos(25662 y 5090 en este caso).
+	Tenemos dos flujos, entre dos direcciones y que se comunican únicamente en dos puertos(25662 y 5090 en este caso).
 * ¿Cuál es su periodicidad?
 	20 ms.
 * ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
